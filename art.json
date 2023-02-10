@@ -1,0 +1,40 @@
+{
+    "images": [
+        {
+            "imgPath": "newImg/VolumeCover.PNG",
+            "imgLocation": "N/A",
+            "description": "Drawing of me and my friend's OCs fighting using quirks (credit: My Hero Academia)",
+            "date": "02/06/2023"
+        },
+        {
+            "imgPath": "newImg/Ren-Todoroki-Snapchat-20230110154031.PNG",
+            "imgLocation": "N/A",
+            "description": "Redraw of an irl experience with my dog lying on me done with Ren and his cat",
+            "date": "01/10/2023"
+        },
+        {
+            "imgPath": "newImg/366-Shigaraki-panel-coloring-20220924215411.PNG",
+            "imgLocation": "N/A",
+            "description": "Coloring of a panel of Shigaraki from My Hero Academia chapter 366",
+            "date": "09/24/2022"
+        },
+        {
+            "imgPath": "newImg/KyoRef.PNG",
+            "imgLocation": "N/A",
+            "description": "Kyo (OC) reference sheet",
+            "date": "02/04/2023"
+        },
+        {
+            "imgPath": "newImg/AshRef.PNG",
+            "imgLocation": "N/A",
+            "description": "Ash (OC) reference sheet",
+            "date": "02/04/2023"
+        },
+        {
+            "imgPath": "newImg/DormRoom.PNG",
+            "imgLocation": "N/A",
+            "description": "Ren's dorm room in My Hero Academia",
+            "date": "10/30/2022"
+        }
+  ]
+}
