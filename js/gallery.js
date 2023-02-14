@@ -46,7 +46,7 @@ function swapPhoto() {
   //Adds in the actual data to the page so it's visible (at least the photo definitely)
   document.getElementById("photo").src = mImages[mCurrentIndex].img;
   var loc = document.getElementsByClassName("location");
-  loc[0].innerHTML = "location: " + mImages[mCurrentIndex].location;
+  loc[0].innerHTML = "Location: " + mImages[mCurrentIndex].location;
 
   var des = document.getElementsByClassName("description");
   des[0].innerHTML = "Description: " + mImages[mCurrentIndex].description;
@@ -86,7 +86,7 @@ function reversePhoto() {
   dt[0].innerHTML = "Date: " + mImages[mCurrentIndex].date;
 
   mLastFrameTime = 0; //Restarts timer
-  mCurrentIndex -= 1; //Adds one when swapPhoto works
+  mCurrentIndex -= 1; //Minus one when reversePhoto works
 
   //Add code here to access the #slideShow element.
   //Access the img element and replace its source
@@ -109,7 +109,7 @@ var mJson;
 
 // URL for the JSON to load by default
 // Some options for you are: images.json, images.short.json; you will need to create your own extra.json later
-var mUrl = "https://api.npoint.io/a2a427005054ea24b4ae";
+var mUrl = "extra.json";
 
 //Part 2 function
 //Pulls out Json data
@@ -147,16 +147,30 @@ function makeGalleryImageOnloadCallback(galleryImage) {
 }
 
 $(document).ready(function () {
+  $("#nextPhoto").position({
+    my: "right center",
+    at: "right",
+    of: "#nav",
+  });
+
+  //Part 5- so make this
+  const urlParams = new URLSearchParams(window.location.search);
+
+  for (const [key, value] of urlParams) {
+    console.log(`${key}:${value}`);
+    mUrl = value;
+  }
+  if (mUrl == undefined) {
+    mUrl = "https://api.npoint.io/a2a427005054ea24b4ae";
+  }
+
+  //$.get("json", function{
+  //if()
+  //})
+
   // This initially hides the photos' metadata information
   fetchJSON();
   //$('.details').eq(0).hide();
-
-  
-$("#nextPhoto").position({
-  my: "right center",
-  at: "right",
-  of: "#nav",
-});
 });
 
 window.addEventListener(
@@ -190,15 +204,12 @@ function GalleryImage() {
 //Makes icon rotate and show/hide details
 function rotate() {
   if ($(".moreIndicator").hasClass("rot90")) {
-	$(".moreIndicator").removeClass("rot90");
+    $(".moreIndicator").removeClass("rot90");
     $(".moreIndicator").addClass("rot270");
     $(".details").slideToggle();
   } else {
-	$(".moreIndicator").removeClass("rot270");
-  	$(".moreIndicator").addClass("rot90");
+    $(".moreIndicator").removeClass("rot270");
+    $(".moreIndicator").addClass("rot90");
     $(".details").slideToggle();
   }
-};
-
-//There's an error in this-
-
+}
